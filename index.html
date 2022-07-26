@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restrntr.</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  
+  
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="navigationbar.css" />
+  
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+</head>
+
+<header>
+  
+</header>
+
+<body>
+  <main >
+    
+    <!-- Center Screen title-->
+    <div class="title">
+        <h1>Restrntr.</h1>
+        <h1>The handy resturant assistant for groups</h1>
+    </div>
+    
+    <div class="number-control">
+        <h1>How Many people are eating today?</h1>
+        <div>
+        <button onclick="remove_member()" id="remove-member">-</button>
+        <h1 id="member-amount">  </h1>
+        <button onclick="add_member()" id="add-member">+</button>
+        </div>
+    </div>
+
+    <!-- input for resturants-->
+    <div class="input">
+            <div>
+            <label for="resturant-name">resturant</label>
+            <input type="text" placeholder="resturant name" id="resturant-name">
+            </div>
+            <div>
+            <label>rank</label>
+            <div id="rank-sliders">
+            
+        </div>
+            </div>
+    
+        
+
+    </div>
+    <div>
+        <button onclick="add_resturant()">Add Resturant</button>
+
+    </div>
+
+    
+    <a href="dice roll.html" id="pick">Pick Resturant</a>
+    <button onclick="clear_resturants()" id="clear">Clear Resturants</button>
+
+
+
+
+
+  </main>
+  <script src="main.js" async></script>  
+</body>
+
+</html>
