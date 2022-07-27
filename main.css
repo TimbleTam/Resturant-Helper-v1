@@ -17,7 +17,6 @@ html {
 
 .title {
     padding: 0%;
-
     display: flex;
     flex-direction: column;
 }
@@ -33,7 +32,6 @@ html {
         rgb(199, 127, 127)
     );
     background-size: 400% 400%;
-    animation: title_intro 2s ease-in-out;
     height: 30vmin;
     transition: all 3s;
     background-position: 0% 50%;
@@ -77,8 +75,19 @@ html {
     transform: rotateZ();
 }
 
+.dice-background{position: absolute;
+width: 100%;
+height: 100%;
+background-color: var(--comp-col-1);
+display: flex;
+flex-direction: row;
+justify-content: center;
+}
+
+
 .stage {
-    width: 100vw;
+    width: 100vmin;
+    left: 50%;
     height: 100vh;
     -webkit-perspective: 50%;
     -webkit-perspective-origin: 50% 50%;
@@ -87,8 +96,8 @@ html {
 figure {
     display: block;
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    width: 100vmin;
+    height: 100vmin;
     background-color: var(--comp-col-1);
 }
 
@@ -110,19 +119,47 @@ figure {
 }
 .side-a {
     animation: 1s text_reveal forwards;
-    animation-delay: 0s;
 }
 .side-b {
     animation: 1s text_reveal forwards;
-    animation-delay: 1s;
 }
 .side-c {
     animation: 1s text_reveal forwards;
-    animation-delay: 2s;
 }
 .side-d {
     animation: 1s text_reveal forwards;
-    animation-delay: 3s;
+}
+
+#rank-sliders input {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 25px;
+    background: var(--comp-col-1);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+    margin-bottom: 2vmin;
+}
+
+#rank-sliders input:hover {
+    opacity: 1;
+}
+
+#rank-sliders input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--grad);
+    cursor: pointer;
+}
+
+#rank-sliders input::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: var(--grad);
+    cursor: pointer;
 }
 
 .cube {
@@ -134,13 +171,8 @@ figure {
 
 @keyframes rotate {
     0% {
-        transform: rotateY(0deg);
+        transform: rotateY(-720deg);
     }
-
-    50% {
-        transform: rotateY(-360deg);
-    }
-
     100% {
         transform: rotateY(3600deg);
     }
@@ -150,16 +182,16 @@ figure {
     -webkit-transform-origin: 50% 50% 0;
 }
 .front {
-    -webkit-transform: translateZ(50vw);
+    -webkit-transform: translateZ(50vmin);
 }
 .back {
-    -webkit-transform: rotateY(180deg) translateZ(50vw);
+    -webkit-transform: rotateY(180deg) translateZ(50vmin);
 }
 .left {
-    -webkit-transform: rotateY(-90deg) translateZ(50vw);
+    -webkit-transform: rotateY(-90deg) translateZ(50vmin);
 }
 .right {
-    -webkit-transform: rotateY(90deg) translateZ(50vw);
+    -webkit-transform: rotateY(90deg) translateZ(50vmin);
 }
 
 .input div {
@@ -212,6 +244,11 @@ button {
 
 #pick {
     font-size: 5vmin;
+    text-decoration: none;
+    border-radius: 50px 50px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border: 5px;
 }
 
 #clear {
@@ -221,15 +258,132 @@ button {
 }
 
 #return-to-home {
-     position: fixed;
-     bottom: 10%;
-     left: 0%;
-     font-size: 5vmin;
-     align-self: center;
+    position: fixed;
+    bottom: 10%;
+    left: 0%;
+    font-size: 5vmin;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+    text-emphasis: none;
+    text-decoration: none;
+    color: var(--background);
+}
 
-     width: 100%;
-     text-align: center;
-     text-emphasis: none;
-     text-decoration: none;
-     color: var(--background);
+.resturant-tab {
+    width: 90vw;
+    height: 5vh;
+    background-color: var(--comp-col-1);
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-left: 20px;
+    border-radius: 50px 50px;
+}
+
+.edit-resturant-tab {
+    background-color: var(--background);
+    color: var(--comp-col-1);
+    height: 4vh;
+    justify-self: flex-end;
+    align-self: center;
+    font-size: 2vmin;
+}
+
+.edit-resturant-tab:hover {
+    background: var(--grad);
+    color: var(--comp-col-1);
+}
+
+.delete-resturant-tab {
+    background-color: var(--background);
+    color: var(--comp-col-1);
+    height: 4vh;
+    top: 4vh;
+    align-self: center;
+    font-size: 2vmin;
+}
+
+.delete-resturant-tab:hover {
+    background: var(--grad);
+    color: var(--comp-col-1);
+}
+
+.resturant-tab-value {
+    width: 30vw;
+    font-size: 2vw;
+}
+
+.resturant-tab-name {
+    width: 30vw;
+    align-self: center;
+    font-size: 3vmin;
+    color: var(--background);
+}
+
+#add-resturant-btn {
+    font-size: 5vmin;
+    margin-top: 5vh;
+    width: 30vw;
+    justify-items: center;
+    align-self: center;
+}
+
+#add-resturant-btn:hover {
+    background: var(--grad);
+    color: var(--comp-col-1);
+}
+
+#clear {
+    font-size: 5vmin;
+    margin-top: 2.5vh;
+    margin-bottom: 2.5vh;
+    width: 30vw;
+    justify-items: center;
+    align-self: center;
+    background: var(--comp-col-1);
+    color: var(--background);
+}
+
+#clear:hover {
+    background: var(--grad);
+    color: var(--comp-col-1);
+}
+
+.labeliser {
+    font-size: 5vmin;
+    align-self: center;
+}
+
+#centraliser {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.pick-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#pick {
+    font-size: 5vmin;
+    height: 5vh;
+    width: 40vw;
+    text-align: center;
+    margin-top: 2.5vmin;
+
+    align-self: center;
+    background: var(--grad);
+    color: var(--comp-col-1);
+}
+
+#pick:hover {
+    background: var(--comp-col-1);
+    color: var(--grad);
 }

@@ -14,6 +14,7 @@ const myth3 = document.getElementById("myth3");
 
 
 
+
 window.onload = function () {
     pick_resturant();
 };
@@ -68,5 +69,6 @@ function pick_resturant() {
     pick4 = Math.round(pick4);
 
     myth3.innerText = list[pick4];
+    
 }
 
