@@ -19,6 +19,7 @@ html {
     padding: 0%;
     display: flex;
     flex-direction: column;
+    
 }
 
 .title h1:nth-child(1) {
@@ -26,10 +27,10 @@ html {
     text-align: center;
     background: linear-gradient(
         -45deg,
-        rgb(50, 105, 177),
+        #3269b1,
         #e73c7e,
         #23a6d5,
-        rgb(199, 127, 127)
+        #c77f7f
     );
     background-size: 400% 400%;
     height: 30vmin;
@@ -37,6 +38,8 @@ html {
     background-position: 0% 50%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    
+    
 }
 
 @keyframes title_intro {
@@ -73,6 +76,7 @@ html {
     padding-left: 20px;
     border-radius: 50px 50px;
     transform: rotateZ();
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .dice-background{position: absolute;
@@ -202,6 +206,7 @@ figure {
     padding-right: 5vmin;
     text-align: center;
     font-size: 3vmin;
+    
 }
 
 .number-control {
@@ -240,6 +245,7 @@ button {
     border-radius: 50px 50px;
     padding-right: 20px;
     padding-left: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 #pick {
@@ -249,6 +255,7 @@ button {
     padding-right: 20px;
     padding-left: 20px;
     border: 5px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 #clear {
@@ -270,6 +277,92 @@ button {
     color: var(--background);
 }
 
+#funny-man-holder {
+    position: fixed;
+   
+    width: 200vw;
+
+    bottom: -10vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: nowrap;
+
+}
+
+#funny-little-man {
+   
+    
+    flex-shrink: 0.1;
+    opacity: 0.5;
+
+    
+    animation: infinite funny-man-dance;
+    animation-duration: 1s;
+}
+
+#funny-man-holder img:nth-child(1) {
+    animation-duration: 1s;
+}
+
+#funny-man-holder:nth-child(2) {
+    animation-duration: 2s;
+}
+
+#funny-man-holder:nth-child(3) {
+    animation-duration: 1.5s;
+}
+
+#funny-man-holder:nth-child(4) {
+    animation-duration: 1.2s;
+}
+
+#funny-man-holder:nth-child(5) {
+    animation-duration: 1.6s;
+}
+#funny-man-holder:nth-child(6) {
+    animation-duration: 2s;
+}
+#funny-man-holder:nth-child(7) {
+    animation-duration: 0.7s;
+}
+#funny-man-holder:nth-child(8) {
+    animation-duration: 3s;
+}
+#funny-man-holder:nth-child(9) {
+    animation-duration: 1.4s;
+}
+#funny-man-holder:nth-child(10) {
+    animation-duration: 1.7s;
+}
+#funny-man-holder:nth-child(11) {
+    animation-duration: 1.4s;
+}
+
+
+
+
+@keyframes funny-man-dance {
+    0% {
+        transform:  translateY(0px) translateX(0px);
+    }
+    20% {
+        transform: translateY(10px) translateX(10px);
+    }
+    40% {
+        transform:  translateY(0px) translateX(10px);
+        opacity: 0.5;
+    }
+    60% {
+        transform: translateY(10px) translateX(0px);
+    }
+    100% {
+        transform:translateY(0px) translateX(0px);
+    }
+}
+
 .resturant-tab {
     width: 90vw;
     height: 5vh;
@@ -283,6 +376,7 @@ button {
     padding-left: 20px;
     padding-left: 20px;
     border-radius: 50px 50px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .edit-resturant-tab {
@@ -387,3 +481,42 @@ button {
     background: var(--comp-col-1);
     color: var(--grad);
 }
+
+.person-input-page {
+    background-color: var(--background);
+    color: var(--comp-col-1);
+    position:fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+}
+.person-input-page div {
+    background-color: blue;
+    width: 100%;
+
+}
+
+.person-input-page :nth-child(3){
+ margin-left: 10%;
+ margin-right: 10%;
+}
+
+.sumit-my-resturant-review {
+    background: var(--comp-col-1);
+    color: var(--background);
+    font-size: 10vmin;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.sumit-my-resturant-review:hover {
+    background: var(--grad);
+    color: var(--background);
+    font-size: 10vmin;
+}
+

@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Restrntr.</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
@@ -33,7 +34,7 @@
         </div>
 
         <div class="number-control">
-            <h1>How Many people are eating today?</h1>
+            <h1>How Many people are you eating with today?</h1>
             <div>
                 <button onclick="remove_member()" id="remove-member">-</button>
                 <h1 id="member-amount"> </h1>
@@ -50,7 +51,7 @@
             
                 <h1 class="labeliser">rank</h1>
                 <div id="rank-sliders">
-
+                    
                 </div>
 
 
@@ -62,6 +63,7 @@
             </div>
 
             <div class="pick-center">
+                <button onclick="begin_resturant_review()" id="add-resturant-btn">Review Resturants</button>
             <a href="dice roll.html" id="pick">Pick Resturant</a>
             </div>
             <div id="resturant-tab-container">
@@ -69,6 +71,10 @@
             </div>
             <div id="centraliser">
             <button onclick="clear_resturants()" id="clear">Clear Resturants</button>
+        </div>
+
+        <div id="rest-review-container">
+        
         </div>
 
 
